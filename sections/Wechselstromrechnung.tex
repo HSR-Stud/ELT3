@@ -81,6 +81,20 @@
 	Integration: $\int a(t) dt = \frac{\hat{A}}{j \omega}$
 	
 	\subsection{Leistungen und Energie}
+		\subsubsection{Einheiten}
+		
+		\begin{tabular}{|l|l|l|l|}
+		\hline
+			Name & Formelzeichen & Einheit & Formel \\
+		\hline
+			Wirkleistung & $P$ & $W$ & $U_{eff} \cdot I_{eff}$ \\
+		\hline
+			Scheineleistung & $S$ & $\mathrm{VA}$ & $\hat{U} \cdot \hat{I}$ \\
+		\hline
+			Blindleistung & $Q$ & $var$ & $\sqrt{S^2 - P^2}$\\
+		\hline
+		\end{tabular}\\
+		
 	\begin{tabular}{ll}
    		\parbox{4cm}{
    			\includegraphics[width=4cm]{./bilder/zeigerdiag-leistungen.png}}
@@ -125,7 +139,6 @@
 		$$C = -\frac{Q_C}{\omega U^2}$$
 		\end{minipage}
 \end{tabular}
-\newpage
 
 \subsection{Systematische Netzwerkanalyse}
 
@@ -207,7 +220,7 @@ Fliesst der ``fremde`` (induzierende) Strom bei der \textbf{Markierung hinein}, 
 Wirkung als wenn er bei der gekoppelten Spule in die \textbf{Markierung
 hineinfliessen würde}! 
 
-\newpage
+
 \subsubsection{Knotenpotentialmethode oder Trennbündelmethode}
 \begin{tabular}{ll}
 \parbox{6cm}{\includegraphics[width=6cm]{./bilder/netzwerkanalyse-knotenpotential.png}
@@ -284,7 +297,6 @@ $$\textbf{Allgemein: }\left[ \begin{array}{cc}
       \renewcommand{\arraystretch}{1}
 	  \end{minipage}
 
-\newpage
 \subsection{Impedanz-Transformationen}
 Werden gebraucht, wenn Bauteile verschiedene Werte haben können. Bspw. wird in
 einer Schaltung eine Kapazität oder eine Induktion variiert.\\
