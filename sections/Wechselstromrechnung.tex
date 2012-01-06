@@ -19,21 +19,25 @@
    	\end{tabular}
 
 	\subsection{Begriffe}
-		\begin{tabular}{llll}
-		$\underline{Z} = R +j X$: 
-			& Komplexer Widerstand (Impedanz); 
-			& $R$: Wirkwiderstand (Resistanz); 
-			& $X$: Blindwiderstand (Reaktanz)\\
-		$\underline{Y} = G + j B$: 
-			& Komplexer Leitwert (Admittanz); 
-			& $G$: Wirkleitwert (Konduktanz); 
-			& $B$: Blindleitwert (Suszeptanz)\\
-		$\underline{Z}=Z\cdot e^{j\varphi}$ & $Z=\frac{U}{I}=\sqrt{R^2+X^2}$ &
-		$\varphi =
-		\arctan\left(\frac{\Imag(\underline{Z})}{\Real(\underline{Z})}\right)$&
-		$G=\Real(\underline{Y})\neq\frac{1}{R}, \;
-		B=\Imag(\underline{Y})\neq\frac{1}{X}$
-      	\end{tabular}
+		\begin{tabular}{lllll}
+		Scheinwiderstand & & $Z = \frac{U_{eff}}{I_{eff}} $ & $ = \sqrt{R^2+X^2}$ &
+		Ohm\\ Komplexer Widerstand & Impedanz & $\underline Z = R + jX $ & $ = Z \cdot
+		e^{j \varphi}$ & Ohm\\
+		Komplexer Leitwert & Admittanz & $\underline Y = G + jB $ & $ =
+		\frac{1}{\underline Z} = \frac{1}{Z}e^{-j\varphi}$ & Siemens\\
+		Wirkwiderstand & Resistanz & $R = \Real(\underline Z) $ & $ = Z
+		\cdot cos(\varphi)$ & Ohm\\
+		Wirkleitwert & Konduktanz & $G = \Real(\underline Y) $ & $ \neq \frac{1}{R}$ &
+		Siemens\\
+		Blindwiderstand & Reaktanz & $X = \Imag(\underline Z) $ & $ = Z
+		\cdot sin(\varphi)$ & Ohm\\
+		Blindleitwert & Suszeptanz & $B = \Imag( \underline Y) $ & $ \neq \frac{1}{X}$
+		& Siemens\\
+		Phasenverschiebung & & $\varphi =
+		\arctan\left(\frac{\Imag(\underline{Z})}{\Real(\underline{Z})}\right)$ & &
+		Radiant\\
+		
+		\end{tabular}
 	
 	\subsection{Schaltelemente bei zeitabhängigen Vorgängen}
 	\begin{tabular}{p{1.5cm} p{4.3cm} p{1.5cm} p{4.3cm} p{1.5cm} p{4.3cm}}
@@ -281,7 +285,6 @@ $$\textbf{Allgemein: }\left[ \begin{array}{cc}
 	    \includegraphics[width=6cm]{./bilder/stern-dreieck.png} 
 	  \end{minipage}
 	  \begin{minipage}[rt]{9.35 cm} %BASTEL!!
-      \renewcommand{\arraystretch}{2}
 	  \begin{tabular}{ll}
 	Umwandlung $\triangle \rightarrow Y$: 
 		&$Z_{c} = \dfrac{Z_{ac} Z_{bc}}{Z_{ab}+Z_{bc}+Z_{ac}}$\\
@@ -294,7 +297,6 @@ $$\textbf{Allgemein: }\left[ \begin{array}{cc}
 	Bei gleichen Induktivitäten:
 	&$L_Y = \frac{L_\triangle}{3}$
 	  \end{tabular}
-      \renewcommand{\arraystretch}{1}
 	  \end{minipage}
 
 \subsection{Impedanz-Transformationen}
