@@ -85,20 +85,73 @@
 	Integration: $\int a(t) dt = \frac{\hat{A}}{j \omega}$
 	
 	\subsection{Leistungen und Energie}
-		\subsubsection{Einheiten}
-		
-		\begin{tabular}{|l|l|l|l|}
+		\subsubsection{Übersicht}
+			\begin{centering}
+			\begin{tabular}{|l|c|c|c|c|}
+				\hline
+					Last & $P=S\cdot\cos\varphi$ & $Q=S\cdot\sin\varphi$ & $S$ & $\cos\varphi$
+					\\
+				\hline
+					rein induktiv & 0 & positiv & $Q$ & 0\\
+				\hline
+					ohmisch-induktiv & positiv & positiv & $\sqrt{P^2+Q^2}$& $0\cdots1$\\
+				\hline
+					rein ohmsch & positiv & 0 & $P$ & 1 \\
+				\hline
+					ohmsch-kapazitiv & positiv & negativ & $\sqrt{P^2+Q^2}$& $0\cdots1$\\
+				\hline
+					rein kapazitiv & 0 & negativ & $Q$ & 0 \\
+				\hline
+			\end{tabular}\\
+				\end{centering}
+		\begin{multicols}{2}
+				$S=\sqrt{P^2+Q^2}$\\
+				$P=S\cdot \cos \varphi$\\
+				$Q=S\cdot\sin\varphi$\\
+				$Q=P\cdot\tan\varphi$\\
+				$P=Q\cot\varphi$\\
+				$\tan\varphi=\frac{Q}{P}$	
+		\end{multicols}
+	\begin{centering}
+	\begin{tabular}{|l|c|c|}
 		\hline
-			Name & Formelzeichen & Einheit & Formel \\
+			& Parallel-Ersatzschaltung & Reihen-Ersatzschaltung \\
 		\hline
-			Wirkleistung & $P$ & $W$ & $U_{eff} \cdot I_{eff}$ \\
+			Schaltbild & \includegraphics[width=5.5cm]{./bilder/RL_parallel.png} &
+			\includegraphics[width=5.5cm]{./bilder/RL_Seriel.png}\\
 		\hline
-			Scheineleistung & $S$ & $\mathrm{VA}$ & $\hat{U} \cdot \hat{I}$ \\
+			komplexer Widerstand & & $\underline{Z}=R+jX$\\
+			komplexer Leitwert & $\underline{Q}=G+jB$ &\\
 		\hline
-			Blindleistung & $Q$ & $var$ & $\sqrt{S^2 - P^2}$\\
+			Scheinwiderstand & & $Z=sqrt{R^2+X'2}$\\
+			Scheinleitwert & $Y=sqrt{G^2+B^2}$ & \\
 		\hline
-		\end{tabular}\\
-		
+			Wirkwiderstand & & $R=Z\cos\varphi=\frac{U_W}{I}$\\
+			Wirkleitwert & $G=Y\cos\varphi_Y=\frac{I_W}{U}$&\\
+		\hline
+			Blindwiderstand & & $X=Z\sin\varphi=\frac{U_b}{I}$\\
+			Blindlietwert & $B = -Z\sin\varphi_Y = \frac{B_b}{U}$&\\
+		\hline
+			komplexe Leistung & $\underline{Q}=
+			\underline{Y^*}U^2=\left(G-jB\right)U^2$& $\underline{S}=\underline{Z}I^2=\left(R+jX\right)I^2$\\
+			Wirkleistung & $P=\frac{I_WU=I{_W}{^W}}{G}=U^2G$ &
+			$P=U_WI=\frac{U{_W}{^2}}{R}=I^2R$ \\
+			Bildleistung & $Q=-I_bU=\frac{-I{_b}{2}}{B}=-U^2B$ & $Q = U_bI =
+			\frac{U{_b}{^2}}{X}=I^2X$\\
+			Scheinleistung & $S=UI=U\sqrt{I{_W}{^2}+I{_b}{^2}}$ & $S=UI =
+			I\sqrt{U{_w}{^2}+U{_b}{^2}}$\\
+		\hline
+			Wirkfraktor & $\cos\varphi= \frac{G}{Y}$ & $\cos\varphi=\frac{R}{Z}$\\
+			Blindfaktor & $\sin\varphi= \frac{B}{Y}$ & $\sin\varphi=\frac{X}{Z}$\\
+		\hline
+			Wirkstrom & $I_W=I\cos\varphi_Y=GU$ & \\
+			Wirkspannung & & $U_W = U\cos\varphi =R \cdot I$ \\
+		\hline
+			Blindstrom & $I_b = -I \sin\varphi_y = -BU$ & \\
+			Blindspannung & & $U_b=U\sin\varphi=X\cdot I$\\
+		\hline
+	\end{tabular}\\
+	\end{centering}
 	\begin{tabular}{ll}
    		\parbox{4cm}{
    			\includegraphics[width=4cm]{./bilder/zeigerdiag-leistungen.png}}
