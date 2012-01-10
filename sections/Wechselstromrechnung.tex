@@ -20,8 +20,13 @@
 
 	\subsection{Begriffe}
 		\begin{tabular}{lllll}
-		Scheinwiderstand & & $Z = \frac{U_{eff}}{I_{eff}} $ & $ = \sqrt{R^2+X^2}$ &
-		Ohm\\ Komplexer Widerstand & Impedanz & $\underline Z = R + jX $ & $ = Z \cdot
+		Wirkleistung & & $P = S \cdot \cos \varphi$ & $U_{eff} \cdot I_{eff} \cdot
+		\sin \varphi$ & Watt\\
+		Blindleistung & & $Q = S \cdot \sin \varphi$ & $=U_{eff} \cdot I_{eff} \cdot
+		\sin \varphi$ & var \\
+		Scheinleistung & & $S = U_{eff} \cdot I_{eff} $ & $=\sqrt{P^2+Q^2}$ & VA \\
+		Scheinwiderstand & & $Z = \frac{U_{eff}}{I_{eff}} $ & $ =
+		\sqrt{R^2+X^2}$ & Ohm\\ Komplexer Widerstand & Impedanz & $\underline Z = R + jX $ & $ = Z \cdot
 		e^{j \varphi}$ & Ohm\\
 		Komplexer Leitwert & Admittanz & $\underline Y = G + jB $ & $ =
 		\frac{1}{\underline Z} = \frac{1}{Z}e^{-j\varphi}$ & Siemens\\
@@ -58,14 +63,14 @@
 				$u(t) = \frac1C \int\limits_0^t i(\tau) d\tau + u(0)$ \\
 				$i(t) = C \frac{d u(t)}{dt}$ \\
 				$\underline{Z} = \frac{1}{j \omega C} = - \frac{j}{\omega C}$ \\
-				$W_C=\frac12 C U_C^2$}
+				$P_C=\frac12 C U_C^2$}
    			& \parbox{1.5cm}{
 				\includegraphics[width=1.5cm]{./bilder/zeigerdiag-l.png}}
 			& \parbox{4.3cm}{
 				$u(t) = L \frac{di(t)}{dt}$ \\
 				$i(t) = \frac1L \int\limits_0^t u(\tau) d\tau + i(0)$ \\
 				$\underline{Z} = j \omega L$ \\
-				$W_L=\frac12 L I_L^2$}
+				$P_L=\frac12 L I_L^2$}
    	\end{tabular}
 
 	\subsection{Vorgehen bei Schaltvorgängen}
@@ -89,7 +94,8 @@
 			\begin{centering}
 			\begin{tabular}{|l|c|c|c|c|}
 				\hline
-					Last & $P=S\cdot\cos\varphi$ & $Q=S\cdot\sin\varphi$ & $S$ & $\cos\varphi$
+					Last & $P=S\cdot\cos\varphi$  [W] & $Q=S\cdot\sin\varphi$  [var] & $S$ 
+					[VA] & $\cos\varphi$
 					\\
 				\hline
 					rein induktiv & 0 & positiv & $Q$ & 0\\
@@ -123,8 +129,8 @@
 			komplexer Widerstand & & $\underline{Z}=R+jX$\\
 			komplexer Leitwert & $\underline{Q}=G+jB$ &\\
 		\hline
-			Scheinwiderstand & & $Z=sqrt{R^2+X'2}$\\
-			Scheinleitwert & $Y=sqrt{G^2+B^2}$ & \\
+			Scheinwiderstand & & $Z=\sqrt{R^2+X^2}$\\
+			Scheinleitwert & $Y=\sqrt{G^2+B^2}$ & \\
 		\hline
 			Wirkwiderstand & & $R=Z\cos\varphi=\frac{U_W}{I}$\\
 			Wirkleitwert & $G=Y\cos\varphi_Y=\frac{I_W}{U}$&\\
@@ -139,7 +145,7 @@
 			Bildleistung & $Q=-I_bU=\frac{-I{_b}{2}}{B}=-U^2B$ & $Q = U_bI =
 			\frac{U{_b}{^2}}{X}=I^2X$\\
 			Scheinleistung & $S=UI=U\sqrt{I{_W}{^2}+I{_b}{^2}}$ & $S=UI =
-			I\sqrt{U{_w}{^2}+U{_b}{^2}}$\\
+			I\sqrt{U{_W}{^2}+U{_b}{^2}}$\\
 		\hline
 			Wirkfraktor & $\cos\varphi= \frac{G}{Y}$ & $\cos\varphi=\frac{R}{Z}$\\
 			Blindfaktor & $\sin\varphi= \frac{B}{Y}$ & $\sin\varphi=\frac{X}{Z}$\\
