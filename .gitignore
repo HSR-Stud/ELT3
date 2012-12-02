@@ -1,3 +1,6 @@
 tmp/*
 ELT3.pdf
 *.synctex*
+/*.aux
+/*.log
+/*.out
