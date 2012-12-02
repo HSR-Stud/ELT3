@@ -2,10 +2,11 @@
 	
 	\begin{tabular}{|p{2.5cm}||p{2.7cm}|p{4cm}|p{2.7cm}|p{5cm}|}
 	\hline
-	& \textbf{Elektr. Feld} & \textbf{Magn. Feld} & \textbf{Strömungsfeld} & \textbf{Bemerkung}\\
+	& \textbf{Elektr. Feld} & \textbf{Magn. Feld} & \textbf{Strömungsfeld} & 		
+			\textbf{Bemerkung}\\
 	\hline \hline
 	Feldgrösse & $\vec{E}$, $\vec{D}$ & $\vec{H}$, $\vec{B}$
-	& $\vec{E}$, $\vec{J}$ &\\
+		& $\vec{E}$, $\vec{J}$ &\\
 	\hline
 	Konstante
 		& \parbox{2.7cm}{$\varepsilon_0 = 8.854 \cdot 10^{-12}$\\
@@ -14,7 +15,8 @@
 		& \parbox{2.7cm}{$\sigma=\frac{1}{\rho}$ \\ {\tiny Spezifische
 		Leitfähigkeit}\vspace{.1cm}} &\\ 
 	\hline
-	Stoffgleichung & $\vec{D}=\varepsilon_0\varepsilon_r\vec{E}$ & $\vec{B}=\mu_0\mu_r\vec{H}$
+	Stoffgleichung & $\vec{D}=\varepsilon_0\varepsilon_r\vec{E}$ & 	
+		$\vec{B}=\mu_0\mu_r\vec{H}$
 	& $\vec{J}=\sigma\vec{E}$ &
 	\\
 	\hline
@@ -26,7 +28,7 @@
 	$\Psi_m=\sum_i\Phi_i\approx N \Phi$\\
 	\hline
 	\parbox{2.5cm}{Spannung \\{\tiny (Weg A$\to$B)}} & $U_{AB}=\int\limits_{A}^B
-	\vec{E}\vec{ds}$ & $V_{m_{AB}}=\int\limits_{A}^B\vec{H}\vec{ds}$ 
+	\vec{E}\vec{ds}$ & $V_{m_{AB}}=\int\limits_{A}^B\vec{H}\vec{ds} = \Theta$ 
 	& $U_{AB}=\int\limits_{A}^B\vec{E}\vec{ds}$ & \\
 	\hline
 	Schaltelemente & $Q=CU$ & $\Psi_m=LI$, $\Psi_{m21}=M_{21}I_1$
@@ -117,8 +119,8 @@ und sind immer geschlossen.\\
 		\hline
 		\parbox{5cm}{Induktionsgesetz\\ \tiny{Allgemeine Form}} &
 		$u_i= \mp \dot{\Phi} = \mp \frac{d}{dt} \int \vec{B} \cdot
-		\vec{dA}\qquad $ \parbox{3cm}{\tiny{$- \; B,A \Rightarrow$
-		Rechtsschraube\\ $+ \; B,A \Rightarrow$
+		\vec{dA}\qquad $ \parbox{3cm}{\tiny{$- \Rightarrow B,u_i $
+		Rechtsschraube\\ $+ \Rightarrow B,u_i $
 		Linksschraube}} & $[u_i]= V$\\
 		& $u_i= \mp \dot{\Psi}\qquad$ , meist $\; u_i = \mp
 		N\cdot\dot{\Phi}$ &
@@ -158,31 +160,31 @@ Leiteranordnungen}
   \hline
   Kreisförmige Schleife & $\frac{\mu D}{2}\cdot\ln\frac{D}{d}$ & $\Theta = I$ & $\frac{\mu D}{2}\cdot\ln\frac{D}{d}\cdot I$ & $\Psi = \Phi$ & $L=\frac{\mu
   D}{2}\cdot\ln\frac{D}{d}$\\
-  \includegraphics[width=3cm]{./images/kreisfoermige_schleife.png} & & & & & \\
+  \includegraphics[width=2.5cm]{./images/kreisfoermige_schleife.png} & & & & & \\
   \hline
   Kreisrahmenspule$^{3)}$ & $\frac{\mu D}{2}\cdot\ln\frac{D}{d}$ & $\Theta = NI$ & $\frac{\mu D}{2}\cdot\ln\frac{D}{d}\cdot N \cdot I$ & $\Psi = N \cdot \Phi$ & $L=\frac{\mu  D}{2}\cdot\ln\frac{D}{d}\cdot N^2$\\
-  \includegraphics[width=3cm]{./images/kreisrahmenspule.png} & & & & & \\
+  \includegraphics[width=2.5cm]{./images/kreisrahmenspule.png} & & & & & \\
   \hline
   Zylinderspule $l \gg d$
   & $\frac{\mu A}{l} = \frac{\mu \pi d^2}{4l}$ & $\Theta = NI$ & $\frac{\mu \pi d^2}{4l} \cdot N \cdot I$ & $\Psi = N \cdot \Phi$ & $L=\frac{\mu \pi d^2}{4l}\cdot N^2$\\
-  \includegraphics[width=3cm]{./images/zylinderspule.png} & & & & & \\
+  \includegraphics[width=2.5cm]{./images/zylinderspule.png} & & & & & \\
   \hline
   Toroidspule $^{4)}$ & $\frac{\mu A}{l_m} = \frac{\mu d^2}{4 D_m}$ & $\Theta = NI$ & $\frac{\mu d^2}{4 D_m}\cdot N \cdot I$ & $\Psi = N
   \cdot \Phi$ & $L=\frac{\mu d^2}{4 D_m}\cdot
   N^2$\\
-  \includegraphics[width=4cm]{./images/toroidspule.png} & & & & & \\
+  \includegraphics[width=3.5cm]{./images/toroidspule.png} & & & & & \\
   \hline
   Ringspule mit rechteckf. Querschnitt & $\frac{\mu a}{2
   \pi}\cdot\ln\frac{D}{d}$ & $\Theta = NI$ & $\frac{\mu a}{2\pi}\cdot\ln\frac{D}{d}\cdot N \cdot I$ & $\Psi = N
   \cdot \Phi$ & $L=\frac{\mu a}{2\pi}\cdot\ln\frac{D}{d}\cdot N^2$\\
-  \includegraphics[width=5cm]{./images/torus.png} & & & & & \\
+  \includegraphics[width=4cm]{./images/torus.png} & & & & & \\
   \hline
   Koaxialleitung $R_2 > R_1$
   & $\frac{\mu l}{2 \pi}\cdot\ln\frac{R_2}{R_1}$ & $\Theta = I$ & $\frac{\mu l}{2\pi}\cdot\ln\frac{R_2}{R_1}\cdot I$ & $\Psi = \Phi$ & $L=\frac{\mu l}{2\pi}\cdot\ln\frac{R_2}{R_1}$ \\
-  \includegraphics[width=3cm]{./images/e-c-koaxialkabel.png} & & & & & \\
+  \includegraphics[width=2.5cm]{./images/e-c-koaxialkabel.png} & & & & & \\
   \hline
   Paralleldrahtleitung $l \gg a \gg R$ & $\frac{\mu l}{\pi}\cdot\ln\frac{a-R}{R}$ & $\Theta = I$ & $\frac{\mu l}{\pi}\cdot\ln\frac{a-R}{R}\cdot I$ & $\Psi = \Phi$ & $L=\frac{\mu l}{\pi}\cdot\ln\frac{a-R}{R}$\\
-  \includegraphics[width=3cm]{./images/e-c-paralleldraht.png} & & & & & \\
+  \includegraphics[width=2.5cm]{./images/e-c-paralleldraht.png} & & & & & \\
   \hline
 \end{tabular}
 
@@ -190,8 +192,8 @@ Leiteranordnungen}
 	\textbf{Bemerkungen:}\\
 	$^{1)}$ ohne Fluss durch Leiter\\
 	$^{2)}$ nur äussere Induktivität\\
-	$^{3)}$ $A=\frac{\pi d^2}{4} \qquad l_m \approx \pi D_m$\\
-	$^{4)}$ Wickeldurchmesser d in radialer\\ und axialer Richtung $d \ll D$\\
+	$^{3)}$ Wicklungs-$\varnothing$ d in radialer und axialer Richtung $d \ll D$\\
+	$^{4)}$ $A=\frac{\pi d^2}{4} \qquad l_m \approx \pi D_m$\\
 	
 	\textbf{Allgemein} gilt:\\
 	$\Phi=\Lambda \cdot \Theta$, $\Lambda=\frac{1}{R_m}$\\
@@ -221,7 +223,7 @@ $H(r) = \frac{N \cdot I}{l} \qquad l \gg d$
 	&$\vec{F_L} = I (\vec{l} \times \vec{B}) \qquad F_L = I \cdot l \cdot B \cdot
 	\sin{\alpha}$ \\
 \hline
-\end{tabular}
+\end{tabular}\\
 
 
 \begin{tabular}{llll}
