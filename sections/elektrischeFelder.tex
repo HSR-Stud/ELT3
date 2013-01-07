@@ -1,3 +1,5 @@
+\section{Elektrische Felder}
+
 \subsection{Integral-Gesetze der Elektrotechnik}
 	
 	\begin{tabular}{|p{2.5cm}||p{2.7cm}|p{4cm}|p{2.7cm}|p{5cm}|}
@@ -53,19 +55,23 @@
 	Umlaufspannung 
 		& \parbox{2.7cm}{
 			\vspace{.1cm}
-			$\oint\vec{E}\vec{ds}=0-\dot{\Phi}_m$ \\ 
+			$\oint\vec{E}d\vec{s}=0-\dot{\Phi}_m$ \\ 
 			{\tiny Induktionsgesetz}\\Maxwell II
 			\vspace{.1cm}}
 		& \parbox{4cm}{
 			\vspace{.1cm}
-			$\oint\vec{H}\vec{ds}=\theta+\dot{\Psi}_{el}$ \\ 
+			$\oint\vec{H}d\vec{s}=\theta+\dot{\Psi}_{el}$ \\ 
 			{\tiny Vollständiges Durchflutungsgesetz} \\Maxwell I
 			\vspace{.1cm}}
 		& \parbox{2.7cm}{
 			\vspace{.1cm}
-			$\oint\vec{E}\vec{ds}=0-\dot{\Phi}$ \\ Kirchhoff 2
+			$\oint\vec{E}d\vec{s}=0(-\dot{\Phi})$ \\ Kirchhoff 2
 			\vspace{.1cm}}
-		& \\
+		& \parbox{5cm}{
+			\vspace{.1cm} 
+			$d\vec{A}, d\vec{s}$ bilden Rechtsschraube\\
+			$\theta = \int \vec{J}d\vec{A}$, inkl. diskrete Ströme
+		  }\\
 	\hline
 	\end{tabular}
 	
@@ -128,7 +134,9 @@ und sind immer geschlossen.\\
 		\hline
 		\parbox{5cm}{Induktionsgesetz\\ \tiny{bewegter Leiter im Magnetfeld}} &
 		$u_i=\int\vec{E}_i \cdot
-		\vec{dl}=-\int(\vec{v}\times \vec{B})\cdot\vec{dl}$ & $[u_i]= V$\\
+		d\vec{l}=-\int(\vec{v}\times \vec{B})\cdot\vec{dl}\qquad$
+		\parbox{3cm}{\tiny{$\vec{E}_i$ entgegen $\vec{l}$\\
+		$u_i$ in Richtung von $\vec{l}$}} & $[u_i]= V$\\
 		& $u_i=v\cdot B \cdot l\qquad$ falls $\vec{v}\perp \vec{B}$ &\\	
 
 		\hline		
@@ -193,7 +201,9 @@ Leiteranordnungen}
 	$^{1)}$ ohne Fluss durch Leiter\\
 	$^{2)}$ nur äussere Induktivität\\
 	$^{3)}$ Wicklungs-$\varnothing$ d in radialer und axialer Richtung $d \ll D$\\
-	$^{4)}$ $A=\frac{\pi d^2}{4} \qquad l_m \approx \pi D_m$\\
+	$^{4)}$ $A=\frac{\pi d^2}{4} \qquad l_m \approx \pi D_m$
+	
+	\columnbreak
 	
 	\textbf{Allgemein} gilt:\\
 	$\Phi=\Lambda \cdot \Theta$, $\Lambda=\frac{1}{R_m}$\\
@@ -239,15 +249,36 @@ $H(r) = \frac{N \cdot I}{l} \qquad l \gg d$
 & \parbox{4.5cm}{
 	\includegraphics[width=2.7cm]{./images/biot4.png} \\
 	$H= \frac{I \cdot 2 \sqrt{2}}{\pi \cdot s}$ }
-\end{tabular}
+\end{tabular}\\
 
+\begin{minipage}[t]{8cm}
+	\subsubsection{Lenzsche Regel}
+		Der induzierte Strom wirkt seiner Ursache entgegen.\\
+		Ursache des induzierten Stromes ist die \"Anderung des Flusses.
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{10cm}	
+	\subsubsection{Induktion bei zeitlich veränderlichem Magnetfeld}
+		\textbf{Maxwell}
+		$\quad\boxed{\oint\vec{E}_i \diff \vec{s}=-\frac{\diff}{\diff t}\int \vec{B}\cdot \diff\vec{A}}\quad$
+		\parbox{3.3cm}{\tiny{$\vec{E}_i$ entgegen $\vec{s}$\\
+		$\diff \vec{A}, \diff \vec{s}$ bilden Rechtschraube!}}\\
+		Jedes zeitlich sich ändernde Magnetfeld ruft ein elektrisches Feld hervor und umgekehrt.
+\end{minipage}
+
+%TODO Selbstindukion S. 5-60
+
+%TODO Gleich- und gegensinnige Kopplung S.5-62/63
+
+%TODO Klemmenspannung bei Belastung S.5-59
+
+
+\renewcommand{\arraystretch}{1.5}
 \subsection{Gegeninduktion, Transformator}
-\definecolor{red}{rgb}{1,0,0} % 255,0,0
-\definecolor{green}{rgb}{0,.8,0.05} % 0,203,14
 \begin{tabular}{ll}
 	\parbox{9.5cm}{
- 		\textbf{Gegeninduktion} ($M_{\textcolor{red}{X}\textcolor{green}{Y}}; \textcolor{red}{X}$: Wirkung,
- 		$\textcolor{green}{Y}$: Ursache)\\
+ 		\textbf{Gegeninduktion} ($M_{\textcolor{blue}{X}\textcolor{orange}{Y}}; \textcolor{blue}{X}$: Wirkung,
+ 		 $\textcolor{orange}{Y}$: Ursache)\\
 		\begin{tabular}{ll}
   		Gegeninduktivität
   			& $M_{21} = \frac{\Psi_{m21}}{i_1} =$ (Meist $= \frac{N_2
@@ -272,7 +303,7 @@ $H(r) = \frac{N \cdot I}{l} \qquad l \gg d$
 		\vspace{.2cm}
   			
 	  		\textbf{Idealer Trafo}\\ 
-	  		\fbox{$"u = \dfrac{u_1}{u_2} = \dfrac{N_1}{N_2} = n$} $\qquad$ (im Leerlauf: $\dfrac{1}{"u} = k \sqrt{\dfrac{L_2}{L_1}}$)
+	  		\fbox{$"u = \dfrac{u_1}{u_2} = \dfrac{N_1}{N_2} = \sqrt{\dfrac{L_1}{L_2}}$} $\qquad$ (im Leerlauf: $\dfrac{1}{"u} = k \sqrt{\dfrac{L_2}{L_1}}$)
 	  		}
   		& \parbox{5cm}{
 	  		\includegraphics[width=4cm]{./images/trafo-kopplung.png} \\
@@ -296,3 +327,5 @@ $H(r) = \frac{N \cdot I}{l} \qquad l \gg d$
   		& \parbox{8.8cm}{
 	  		\includegraphics[width=8.8cm]{./images/trafo-verluste.png}}
    	\end{tabular}
+   	\renewcommand{\arraystretch}{\arraystretchOriginal}
+   
