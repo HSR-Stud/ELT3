@@ -24,36 +24,44 @@
 	\hline
    	\end{tabular}
    	
-   	\subsection{Schaltelemente bei ?zeitabhängigen? Vorgängen}
-   		\begin{tabular}{p{1.5cm} p{4.3cm} p{1.5cm} p{4.3cm} p{1.5cm} p{4.3cm}}
+   	\subsection{Grundelemente}
+   		\begin{tabular}{p{1.5cm} p{4.3cm} |p{1.5cm} p{4.3cm}| p{1.5cm} p{4.3cm}}
    	   		\multicolumn{2}{l}{\textbf{Ohmscher Widerstand R}}
    	   			& \multicolumn{2}{l}{\textbf{Kapazitität C}}
    	   			& \multicolumn{2}{l}{\textbf{Induktivität L}} \\
    	   		\multicolumn{2}{l}{$u$ und $i$ können sprunghaft ändern}
    	   			& \multicolumn{2}{l}{$\mathbf{u}$ \textbf{kann nicht sprunghaft ändern}}
    	   			& \multicolumn{2}{l}{$\mathbf{i}$ \textbf{kann nicht sprunghaft ändern}} \\
-   	   		\parbox{1.5cm}{
+   	   	
+   	   		\multirow{2}{1.5cm}{
    				\includegraphics[width=1.5cm]{./images/zeigerdiag-r.png}}
-   				& \parbox{4.3cm}{$u(t) = R i(t)$ \\
-   					$i(t) = \frac{u(t)}{R}$ \\
-   					$\underline{Z} = R$ \\
-   					$P=I^2 \cdot R = \frac{U^2}{R}$}
-   	   			& \parbox{1.5cm}{
-   					\includegraphics[width=1.5cm]{./images/zeigerdiag-c.png}}
-   				& \parbox{4.3cm}{
-   					$u(t) = \frac1C \int\limits_0^t i(\tau) d\tau + u(0)$ \\
-   					$i(t) = C \frac{d u(t)}{dt}$ \\
-   					$\underline{Z} = \frac{1}{j \omega C} = - \frac{j}{\omega C}$ \\
-   					$W_C=\frac12 C U_C^2$\\
-   					$P= I^2 \cdot \omega C = \frac{U^2}{\omega C}$}
-   	   			& \parbox{1.5cm}{
-   					\includegraphics[width=1.5cm]{./images/zeigerdiag-l.png}}
-   				& \parbox{4.3cm}{
-   					$u(t) = L \frac{di(t)}{dt}$ \\
-   					$i(t) = \frac1L \int\limits_0^t u(\tau) d\tau + i(0)$ \\
-   					$\underline{Z} = j \omega L$ \\
-   					$W_L=\frac12 L I_L^2$\\
-   					$P= I^2 \cdot \omega L = \frac{U^2}{\omega L}$}
+   				& $u(t) = R \cdot i(t)$ 
+   				& \multirow{2}{1.5cm}{\includegraphics[width=1.5cm]{./images/zeigerdiag-l.png}}
+   				& $u(t) = \frac{1}{C} \int\limits_0^t i(\tau) d\tau + u(0)$
+   				& 
+   				\multirow{2}{1.5cm}{\includegraphics[width=1.5cm]{./images/zeigerdiag-c.png}}
+   				&$u(t) = L \frac{di(t)}{dt}$\\
+   				
+   				&$i(t) = \frac{u(t)}{R}$
+   				& & $i(t) = C \frac{d u(t)}{dt}$
+   				& & $i(t) = \frac{1}{L} \int\limits_0^t u(\tau) d\tau + i(0)$\\
+   				
+   				& $\underline{Z}_R = R$
+   				& & $\underline{Z}_C = \frac{1}{j \omega C} = - \frac{j}{\omega C}$
+   				& & $\underline{Z_L} = j \omega L$\\
+   				
+   				\parbox{1.7cm}{\small{nicht linear:}}
+   				& $R_=(u) = \frac{U}{I(u)}, r_D = \frac{\diff U}{\diff I}\lvert_{U_0}$
+   				& & $X_C = -\frac{1}{\omega C} \quad B_C = \omega C$
+   	   			& & $X_L = \omega L
+   	   			\quad B_L = -\frac{1}{\omega L}$ \\
+   	   			
+   	   			& $P=I^2 \cdot R = \frac{U^2}{R}$
+   	   			& & $Q_C= - U^2 \cdot \omega C = - \frac{I^2}{\omega C}$
+   	   			& & $Q_L= I^2 \cdot \omega L = \frac{U^2}{\omega L}$\\
+   	   			
+   	   			& & & $W_C=\frac12 C U_C^2$
+   	   			& &$W_L=\frac12 L I_L^2$
    	   	\end{tabular}
    	
    		\subsection{Vorgehen bei Schaltvorgängen}
@@ -65,29 +73,23 @@
    		 \textbf{Beachte:} Spannung an $C$ und Strom an $L$ können nicht sprunghaft ändern.
 
 	\subsection{Komplexe Darstellung sinusförmiger Vorgänge}
-		Momentanwert in $\mathbb{R}$: \fbox{$a(t) = \hat{A} \cos(\omega t + \varphi)$} \qquad
+		Momentanwert in $\mathbb{R}$: \fbox{$a(t) = \hat{A} \cos(\omega t + \varphi)$} \quad
 		Momentanwert in $\mathbb{C}$: \fbox{$\underline{a}(t) = \hat{A} e^{j \varphi} e^{j
-		\omega t}$} $\qquad$ 
+		\omega t} = \underline{\hat{A}}e^{j
+				\omega t}$} $\quad$ 
 		Amplitude in $\mathbb{C}$: \fbox{$\underline{\hat{A}} = \hat{A} e^{j \varphi}$}\\
 		
-		Differentiation: $\frac{d}{dt} \underline{a}(t) = j \omega \underline{\hat{A}}\cdot \e^{\im \omega t}$ $\qquad$ 
-		Integration: $\int \underline{a}(t) dt = \frac{\hat{A}}{j \omega}\cdot \e^{\im \omega t}$
+		Differentiation: $\frac{d}{dt} \underline{a}(t) = \underbrace{j \omega \underline{\hat{A}}}_{\underline{\hat{A}}_d}\cdot \e^{\im \omega t}$ $\qquad$ 
+		Integration: $\int \underline{a}(t) dt = \underbrace{\frac{\underline{\hat{A}}}{j \omega}}_{\underline{\hat{A}}_i}\cdot \e^{\im \omega t}$
 
-	\subsection{Begriffe}
+	\subsection{Begriffe der Impedanz und Admitanz}
 		\begin{tabular}{lllll}
-		Wirkleistung & & $P = S \cdot \cos \varphi$ & $= U_{eff} \cdot I_{eff} \cdot
-		\cos \varphi$ & Watt\\
-		Blindleistung & & $Q = S \cdot \sin \varphi$ & $=U_{eff} \cdot I_{eff} \cdot
-		\sin \varphi$ & var \\
-		Scheinleistung & & $S = U_{eff} \cdot I_{eff}$  &
-		$=\sqrt{P^2+Q^2}=\left|S\right|$ & VA\\
-		komplexe Leistung & & $\underline{S}=\underline{U}\cdot\underline{I^*}$ &
-		$=P+jQ=P+\Imag{Q}$\\
 		Scheinwiderstand & & $Z = \frac{U_{eff}}{I_{eff}} $ & $ =
-		\sqrt{R^2+X^2}$ & Ohm\\ Komplexer Widerstand & Impedanz & $\underline Z = R + jX $ & $ = Z \cdot
-		e^{j \varphi}$ & Ohm\\
-		Komplexer Leitwert & Admittanz & $\underline Y = G + jB $ & $ =
-		\frac{1}{\underline Z} = \frac{1}{Z}e^{-j\varphi}$ & Siemens\\
+		\sqrt{R^2+X^2}$ & Ohm\\ Komplexer Widerstand & Impedanz & $\underline Z = R + jX = Z \cdot e^{j \varphi}$ 
+		& $  = \frac{\underline{U}}{\underline{I}} = \frac{\underline{U}^2}{\underline{S}^*} = 
+		\frac{\underline{S}}{\underline{I}^2}$ & Ohm\\
+		Komplexer Leitwert & Admittanz & $\underline Y = G + jB =
+		\frac{1}{\underline Z} = \frac{1}{Z}e^{-j\varphi}$ & $= \frac{\underline{I}}{\underline{U}}$ &  Siemens\\
 		Wirkwiderstand & Resistanz & $R = \Real(\underline Z) $ & $ = Z
 		\cdot cos(\varphi)$ & Ohm\\
 		Wirkleitwert & Konduktanz & $G = \Real(\underline Y) $ & $ \neq \frac{1}{R}$ &
@@ -96,53 +98,25 @@
 		\cdot sin(\varphi)$ & Ohm\\
 		Blindleitwert & Suszeptanz & $B = \Imag( \underline Y) $ & $ \neq \frac{1}{X}$
 		& Siemens\\
-		Phasenverschiebung & & $\varphi =
+		Phasenverschiebung & & $\varphi = \varphi_u - \varphi_i
 		\arctan\left(\frac{\Imag(\underline{Z})}{\Real(\underline{Z})}\right)$ & &
 		Radiant\\
 		
 		\end{tabular}
 	
-	
-	
-	
-	
-	\subsection{Leistungen und Energie}
-		\subsubsection{Übersicht}
-			\begin{centering}
-			\begin{tabular}{|l|c|c|c|c|}
-				\hline
-					Last & $P=S\cdot\cos\varphi$  [W] & $Q=S\cdot\sin\varphi$  [var] & $S$ 
-					[VA] & $\cos\varphi$
-					\\
-				\hline
-					rein induktiv & 0 & positiv & $Q$ & 0\\
-				\hline
-					ohmisch-induktiv & positiv & positiv & $\sqrt{P^2+Q^2}$& $0\cdots1$\\
-				\hline
-					rein ohmsch & positiv & 0 & $P$ & 1 \\
-				\hline
-					ohmsch-kapazitiv & positiv & negativ & $\sqrt{P^2+Q^2}$& $0\cdots1$\\
-				\hline
-					rein kapazitiv & 0 & negativ & $Q$ & 0 \\
-				\hline
-			\end{tabular}\\
-		\begin{multicols}{2}
-				$S=\sqrt{P^2+Q^2}$\\
-				$P=S\cdot \cos \varphi$\\
-				$Q=S\cdot\sin\varphi$\\
-				$Q=P\cdot\tan\varphi$\\
-				$P=Q\cot\varphi$\\
-				$\tan\varphi=\frac{Q}{P}$	
-		\end{multicols}
+	\subsubsection{Parallel \& Reihen-Ersatzschaltung}
+		
+	\begin{centering}
+			
 	\begin{tabular}{|l|c|c|}
 		\hline
 			& Parallel-Ersatzschaltung & Reihen-Ersatzschaltung \\
 		\hline
-			Schaltbild & \includegraphics[width=5.5cm]{./images/RL_parallel.png} &
-			\includegraphics[width=5.5cm]{./images/RL_Seriel.png}\\
+			Schaltbild & \includegraphics[width=3cm]{./images/RL_parallel.png} &
+			\includegraphics[width=3cm]{./images/RL_Seriel.png}\\
 		\hline
 			komplexer Widerstand & & $\underline{Z}=R+jX$\\
-			komplexer Leitwert & $\underline{Q}=G+jB$ &\\
+			komplexer Leitwert & $\underline{Y}=G+jB$ &\\
 		\hline
 			Scheinwiderstand & & $Z=\sqrt{R^2+X^2}$\\
 			Scheinleitwert & $Y=\sqrt{G^2+B^2}$ & \\
@@ -151,11 +125,11 @@
 			Wirkleitwert & $G=Y\cos\varphi_Y=\frac{I_W}{U}$&\\
 		\hline
 			Blindwiderstand & & $X=Z\sin\varphi=\frac{U_b}{I}$\\
-			Blindlietwert & $B = -Z\sin\varphi_Y = \frac{B_b}{U}$&\\
+			Blindleitwert & $B = Y\sin\varphi_{_Y} = \frac{I_b}{U}$&\\
 		\hline
-			komplexe Leistung & $\underline{Q}=
-			\underline{Y^*}U^2=\left(G-jB\right)U^2$& $\underline{S}=\underline{Z}I^2=\left(R+jX\right)I^2$\\
-			Wirkleistung & $P=\frac{I_WU=I{_W}{^W}}{G}=U^2G$ &
+			komplexe Leistung & $\underline{S}=
+			\underline{Y^*}U^2=\left(G-jB\right)U^2$& $\underline{S}=\underline{Z}I^2=\left(R+jX\right)I^2 = \frac{U^2}{\underline{Z}^{\ast}}$\\
+			Wirkleistung & $P=I_W U=\frac{I{_W}{^2}}{G}=U^2G$ &
 			$P=U_WI=\frac{U{_W}{^2}}{R}=I^2R$ \\
 			Bildleistung & $Q=-I_bU=\frac{-I{_b}{2}}{B}=-U^2B$ & $Q = U_bI =
 			\frac{U{_b}{^2}}{X}=I^2X$\\
@@ -168,37 +142,37 @@
 			Wirkstrom & $I_W=I\cos\varphi_Y=GU$ & \\
 			Wirkspannung & & $U_W = U\cos\varphi =R \cdot I$ \\
 		\hline
-			Blindstrom & $I_b = -I \sin\varphi_y = -BU$ & \\
+			Blindstrom & $I_b = -I \sin\varphi_y = BU$ & \\
 			Blindspannung & & $U_b=U\sin\varphi=X\cdot I$\\
 		\hline
 	\end{tabular}\\
 	\end{centering}
+
+\subsection{Leistungen und Energie}
 	\begin{tabular}{ll}
    		\parbox{4cm}{
    			\includegraphics[width=4cm]{./images/zeigerdiag-leistungen.png}}
    		& \parbox{14cm}{
-			\begin{tabular}{p{3cm}p{5cm}p{5.5cm}}
-	      		Momentanleistung
-	      			& $p(t) = u(t) i(t)$
-	      			\\
-				Komplexe Leistung 
-					& $ \underline{S} = \underline{U} \cdot \underline{I}^\ast = U\cdot I \cdot
-					e^{j(\varphi_u-\varphi_i)}$  & Konjugiert Komplexer Strom! \\
+			\begin{tabular}{p{3cm}p{4.5cm}p{5.5cm}}
+	      		\multirow{2}{4cm}{Komplexe Leistung}  &
+	      			$ \underline{S} = P + jQ$  &\\
+	      			& \multicolumn{2}{l}{$ \underline{S} = \underline{U} \cdot \underline{I}^\ast = U\cdot I \cdot e^{j(\varphi_u-\varphi_i)} = \frac{\underline{U}^2}{\underline{Z}^*} = \underline{I}^2 \cdot \underline{Z} = \underline{U}^2\cdot\underline{Y}^*$}\\
+				Scheinleistung
+					& $ S = | \underline{S} | = U I = \frac{U^2}{Z} = I^2 Z$ 
+					& \\
 				Wirkleistung
 					& $ P = \Real(\underline{S}) = U I \cos(\varphi) $ \\
 				Blindleistung 
 					& $ Q = \Imag(\underline{S}) = U I \sin(\varphi) $
 					& Kapazitiv: $Q < 0$; induktiv: $Q > 0$ \\
-				Scheinleistung
-					& $ S = | \underline{S} | = U I = \frac{U^2}{R} = I^2 R$ 
-					& C: $Q_c=-\omega CU_C^2$, L: $Q_L=\omega LI_L^2$\\
 				Leistungsfaktor
 					& $\cos \varphi = \frac{P}{S} = \frac{P}{UI}$ \\
-				Leistungsanpassung
-					& $\underline{Z}_L = \underline{Z}_i^{\ast}; \; P_{max} = \frac{U_q^2}{4
-					R_i} = \frac{I_q^2 R_i}{4} $
 			\end{tabular}}
    	\end{tabular}
+\subsubsection{Leistungsanpassung}
+	\begin{equation*}
+		\boxed{\underline{Z}_L = \underline{Z}_i^{\ast}} \qquad \underline{Y}_L = \underline{Y}_i^{\ast} \qquad P_{max} = \frac{U_q^2}{4R_i} = \frac{I_q^2 R_i}{4} 
+	\end{equation*}   	
 
 \subsubsection{Blindleistungskompensation}
 \begin{tabular}{p{4cm}p{4cm}p{4cm}p{6cm}}
@@ -211,7 +185,8 @@
 	& \begin{minipage}{4cm}
     	\includegraphics[width=3.5cm]{./images/Blindleistungskompensation.png}
     	\end{minipage} 
-	& \begin{minipage}{6cm}      
+	& \begin{minipage}{6cm} 
+		$$Q_{L} = P \cdot \tan{\varphi}$$     
 		$$Q_{Lk} = P \cdot \tan{\varphi_k}$$
 		$$Q_C = Q_{Lk} - Q_L$$
 		$$C = -\frac{Q_C}{\omega U^2}$$
@@ -221,8 +196,7 @@
 \subsection{Systematische Netzwerkanalyse}
 
 \subsubsection{Netzwerkgleichungen, Integro-Differentialgleichungen}
-Anstelle der Matrizendarstellung werden hier die Netzwerkgleichungen
-vollständig ausgeschrieben mit $\int f(t) dt$ und $\frac{d}{dt} f(t)$.	\\ \\
+Die Netzwerkgleichungen werden nach den selben Regeln aufgestellt, wie für Widerstandsnetze, wobei die Energiespeicher (C,L,M) im Zeitbereich aufgeschrieben werden mit $\int f(t) dt$ und $\frac{d}{dt} f(t)$ Siehe 2.2 Grundelemente.	\\ 
 
 %\subsubsection{Zweigstrommethode / Kreisstrommethode / Maschenstrommethode}
 \begin{tabular}{p{9cm}|p{9cm}}
@@ -239,15 +213,16 @@ vollständig ausgeschrieben mit $\int f(t) dt$ und $\frac{d}{dt} f(t)$.	\\ \\
 		%\textbf{Kreis- oder Maschenstrommethode} (s. Bilder rechts)\\
 		\subsubsection{Kreis- oder Maschenstrommethode} (s. Bilder rechts)\\
 		\begin{list}{$\bullet$}{\setlength{\itemsep}{0cm} \setlength{\parsep}{0cm} \setlength{\topsep}{0cm}} 
+			\item Stromquellen in Spannungsquellen umwandeln.\\[0.2cm]
+			\textbf{Maschenstrommethode:}
 			\item Maschengleichungen enthalten \textbf{Maschenströme}\\
-			$\quad\Rightarrow$ nur Maschengleichungen benötigt\\
-			\item Kann in Matrizenform dargestellt werden\\
-		    \item \textcolor{brown}{Baum} verbindet alle \textcolor{red}{Knoten}, ist
-		    aber nie geschlossen\\
-		    \item Aufzustellende \textcolor{green}{Maschen} bestehen immer aus beliebig
-		    vielen \textcolor{brown}{Ästen} (Zweige vom Baum) und \textbf{einer Sehne}
+			$\quad\Rightarrow$ nur Maschengleichungen benötigt\\[0.2cm]
+			\textbf{Kreisstrommethode:}
+		    \item \textcolor{brown}{Baum} verbindet alle \textcolor{red}{Knoten}, ist nie geschlossen
+		    \item Aufzustellende \textcolor{green}{Kreise} bestehen immer aus beliebig
+		    vielen \textcolor{brown}{Ästen} (Zweige vom Baum) und \textbf{einer Sehne} (Zweige die nicht zum Baum gehören)
 		    \\
-		    \item Stromquellen in Spannungsquellen umwandeln.
+		    
 	    \end{list}	
     \end{minipage} &
 	\begin{minipage}{9cm}
@@ -290,15 +265,30 @@ $$\textbf{Allgemein: }\left[ \begin{array}{cc}
     \text{Gegenrichtung positiv, sonst negativ}
      \end{array}\right]$$\\
 
-\subsubsection{Gekoppelte Spulen}
-\begin{center}
-\includegraphics[width=14cm]{./images/netzwerkanalyse-kopplung-spulen.png}
-\end{center}
+\subsubsection{Gegeninduktivitäten}
+	\textbf{Kreis/Maschenstrom-Methode:}
+	\begin{list}{$\bullet$}{\setlength{\itemsep}{0cm} \setlength{\parsep}{0cm} \setlength{\topsep}{0cm}} 
+	
+		\item {\textbf{Gekoppelte Induktivitäten innerhalb eines Kreises}:\\
+		Da der ``eigene`` Kreisstrom $\underline{J}_K$ von jeder Spule auf die andere wirkt, erhält man Ausdrücke der Form $\pm 2 \im\omega M \cdot \underline{J}_K$ . Das positive Vorzeichen gilt, wenn die Spulen gleichsinnig im Kreis liegen.\\}
+		\item {\textbf{Spannungsanteile aufgrund ``fremder`` Kreisströme:}\\
+		Fliesst der ``fremde`` (induzierende) Strom bei der \textbf{Markierung hinein}, so hat er dieselbe
+		Wirkung als wenn er bei der gekoppelten Spule in die \textbf{Markierung
+		hineinfliessen würde}!}\\
+		
+	\end{list}
 
-\textbf{Vorzeichen der Gegeninduktivität}: 
-Fliesst der ``fremde`` (induzierende) Strom bei der \textbf{Markierung hinein}, so hat er dieselbe
-Wirkung als wenn er bei der gekoppelten Spule in die \textbf{Markierung
-hineinfliessen würde}! 
+ 	\textbf{Knotenpotential-Methode:}\\
+	Die Netzwerkgleichungen können nicht ohne weiteres formu- liert werden, da hierzu die Zweigströme als Funktion der der Knotenpotentiale vorliegen sollten. Man kann hierzu die Trafogleichungen entsprechend umformen oder eine Ersatzschaltung mit gesteuerten Quellen einführen.\\ \\
+	\begin{minipage}{9cm}
+		\textbf{Einfacher Spezialfall:}\\
+			Sind bei einem Übertrager die einen Wicklungsenden miteinander verbunden - oder dürfen sie ohne Beeinflussung der restlichen Schaltung miteinander verbunden werden - so kann die Ersatzschaltung rechts verwendet werden.
+	\end{minipage}
+	\begin{minipage}{9cm}
+	\includegraphics[width=9cm]{./images/netzwerkanalyse-kopplung-spulen.png}
+	\end{minipage}
+
+
 
 
 \subsubsection{Knotenpotentialmethode oder Trennbündelmethode}
@@ -341,20 +331,27 @@ $$\textbf{Allgemein: }\left[ \begin{array}{cc}
     \text{Hineinfliessen positiv, sonst negativ}
      \end{array}\right]$$
 
+\renewcommand{\arraystretch}{1.2}
 \subsubsection{Aspekte zur Wahl der Methode}
-\begin{tabular}{lll}
-\multicolumn{3}{l}{\textit{Art der gegebenen Quellen}}\\
-&Kreisstrommethode: &Spannungsquellen\\
-&Knotenpotentialmethode: &Stromquellen\\
-\multicolumn{3}{l}{\textit{Anzahl Gleichungen}}\\ &Kreisstrommethode: &$z-k+1-$ Anzahl idealer Stromquellen\\
-&Knotenpotentialmethode: &$k-1-$ Anzahl idealer Spannungsquellen\\
-\multicolumn{3}{l}{\textit{Spezialitäten}}\\
-&Kreisstrommethode: &Gegeninduktivitäten\\
-&Knotenpotentialmethode: &Gesteuerte Stromquellen\\
-\multicolumn{3}{l}{\textit{Gesuchte Grössen}}\\
-&Kreisstrommethode: &(Sehnen-) Ströme\\
-&Knotenpotentialmethode: &(Knoten-) Spannungen
+\begin{tabular}{llllll}
+	\multicolumn{3}{l}{\textit{Art der gegebenen Quellen}} & \multicolumn{3}{l}{\textit{Spezialitäten}}\\
+	& Kreisstrom: & Spannungsquellen
+	& Kreisstrom: & Gegeninduktivitäten \\
+	& Knotenpotential: & Stromquellen 
+	& Knotenpotential: & Gesteuerte Stromquellen \\
+	
+	\multicolumn{3}{l}{\textit{Anzahl Gleichungen}}
+	& \multicolumn{3}{l}{\textit{Gesuchte Grössen}}\\ 
+	& Kreisstrom: & $z-k+1-$ Anzahl idealer Stromquellen
+	& Kreisstrom: &(Sehnen-) Ströme\\
+	& Knotenpotential: &$k-1-$ Anzahl idealer Spannungsquellen
+	& Knotenpotential: &(Knoten-) Spannungen
+
 \end{tabular}
+
+\renewcommand{\arraystretch}{\arraystretchOriginal}
+
+	\input{idiotenseite/elektrotechnik/subsections/quellenverschiebung}
 
 \subsection{Stern-Dreieck-Umwandlung}% \formelbuch{18}}
 	%\begin{figure}
@@ -375,29 +372,35 @@ $$\textbf{Allgemein: }\left[ \begin{array}{cc}
 	&$L_Y = \frac{L_\triangle}{3}$
 	  \end{tabular}
 	  \end{minipage}
+	  
+\newpage
 
 \subsection{Impedanz-Transformationen}
-Werden gebraucht, wenn Bauteile verschiedene Werte haben können. Bspw. wird in
-einer Schaltung eine Kapazität oder eine Induktion variiert.\\
+Werden gebraucht, wenn Grundelemente variablen Werten unterliegen können. Bspw. wird $\omega$ variiert\\
 %Immer zuerst die einfachere Variante (Serieschaltung: \underline{Z},
 %Parallelschaultung: \underline{Y}) darstellen und daraus die andere Ortskurve herleiten. \\
 Bei der Umwandlung von \underline{Z} nach \underline{Y} und umgekehrt handelt es sich um die
 \textbf{komplexe Kehrwertfunktion}: 
 \begin{itemize}
-  \item $\underline{Y} = \frac{1}{\underline{Z}} 
-  ( arg(\underline{Z}) = -arg(\underline{Y}),  
+  \item $\underline{Y} = \frac{1}{\underline{Z}} \;
+  ( \varphi_{_Z} = -\varphi_{_Y},  
   |\underline{Y}| = \frac{1}{| \underline{Z} |}) \qquad$
   (Unendlich ferner Punkt wird in den Ursprung abgebildet und umgekehrt)
   \item Verläuft die OK von \underline{Z} oberhalb der Re-Achse, so verläuft die OK von
   \underline{Y} unterhalb der Re-Achse und umgekehrt.
 \end{itemize} 
-\textbf{Konstruktion} der kreisförmigen Ortskurve:
+\textbf{Konstruktion} der kreisförmigen Ortskurve (OK):
 \begin{enumerate}
-  \item Andere Orstkurve (komplexer Kehrwert) als Gerade darstellen. (Dient als Orientierungshilfe
-  und zur Überprüfung)
-  \item Extremalwerte berechnen und als Punkte $P_1, P_2$ darstellen. 
-	($P_1 = \underline{Z}_0 = \lim\limits_{R \rightarrow 0}\underline{Z}, \quad
-	  P_2 = \underline{Z}_\infty = \lim\limits_{R \rightarrow \infty}\underline{Z} $)
+
+  \item Andere Orstkurve (komplexer Kehrwert) als Gerade darstellen. (Dient als Orientierungshilfe und zur Überprüfung)
+  \textbf{Tipp}: $Z$ \& $Y$ in gemeinsames 		
+  	Achsenkreuz eintragen. Skalierung entweder für $Z$ \& $Y$ unterschiedlich, oder normieren: $\underline{z} = \underline{Z} / R_0 \quad \underline{y} = \underline{Y} \cdot R_0$
+  
+  \item Extremalwerte berechnen und als Punkte $P_1, P_2$ darstellen. \\
+	($P_1 = \underline{Z}_0 = \lim\limits_{x \rightarrow 0}\underline{Z}, \quad
+	  P_2 = \underline{Z}_\infty = \lim\limits_{x \rightarrow \infty}\underline{Z} $ mit $x$ als veränderliche Grösse)\\
+	 Für das bestimmen der Winkel kann hier die anderen Ebene zur Hilfe genommen werden. Achtung: $\varphi_{_Z} = -\varphi_{_Y}$
+	 
   \item Mittelsenkrechte von $P_1, P_2$ konstruieren, deren Schnittpunkt mit Re- \textbf{oder}
   Im-Achse den Kreismittelpunkt $M$ ergibt. \\
   Mittels Betrachtung des Anfangswinkels ($\varphi_{Z_0} = - \varphi_{Y_0}$  oder
@@ -405,6 +408,8 @@ Bei der Umwandlung von \underline{Z} nach \underline{Y} und umgekehrt handelt es
   der Nähe des Ursprungs bestimmt werden und der ''falsche'' Mittelpunkt ($M_{Re}$ oder $M_{Im}$)
   ausgeschlossen werden.
   \item Ortskurve (Kreis mit Mittelpunkt $M$, schneidet $P_2$ und $P_1$) konstruieren
+  \item In der $Z$-Ebende bewirkt ein weiteres serielles Element, dass die Ortskurve um deren komplexen Wert verschoben wird.\\
+  Das gleiche gilt auch für weitere parallele Elemente in der $Y$-Ebene. (Bsp. siehe Grafik unten mit zusätzlichem $\underline{Z}$)
 \end{enumerate}
 
 \includegraphics[width=18cm]{./images/impedanztrafo.png}
