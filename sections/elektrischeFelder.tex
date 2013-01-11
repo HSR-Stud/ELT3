@@ -125,17 +125,17 @@ und sind immer geschlossen.\\
 		\hline
 		\parbox{5cm}{Induktionsgesetz\\ \tiny{Allgemeine Form}} &
 		$u_i= \mp \dot{\Phi} = \mp \frac{d}{dt} \int \vec{B} \cdot
-		\vec{dA}\qquad $ \parbox{3cm}{\tiny{$- \Rightarrow B,u_i $
-		Rechtsschraube\\ $+ \Rightarrow B,u_i $
+		\vec{dA}\qquad $ \parbox{3cm}{\tiny{$- \Rightarrow \Phi,u_i $
+		Rechtsschraube\\ $+ \Rightarrow \Phi,u_i $
 		Linksschraube}} & $[u_i]= V$\\
 		& $u_i= \mp \dot{\Psi}\qquad$ , meist $\; u_i = \mp
 		N\cdot\dot{\Phi}$ &
 		\\
 		\hline
 		\parbox{5cm}{Induktionsgesetz\\ \tiny{bewegter Leiter im Magnetfeld}} &
-		$u_i=\int\vec{E}_i \cdot
+		$u_i=-\int\vec{E}_i \cdot
 		d\vec{l}=-\int(\vec{v}\times \vec{B})\cdot\vec{dl}\qquad$
-		\parbox{3cm}{\tiny{$\vec{E}_i$ entgegen $\vec{l}$\\
+		\parbox{3cm}{\tiny{$\vec{l}$ entgegen $\vec{E}_i$\\
 		$u_i$ in Richtung von $\vec{l}$}} & $[u_i]= V$\\
 		& $u_i=v\cdot B \cdot l\qquad$ falls $\vec{v}\perp \vec{B}$ &\\	
 
@@ -155,8 +155,22 @@ und sind immer geschlossen.\\
 		& $L = \frac{\Psi}{I}  \qquad \text{Bei idealer Koppl.: } L = \Lambda N^2 = \frac{N^2}{R_m} $
 		& $[L] = \frac{Vs}{A} = H$\\
 		\hline
-	\end{tabular}
+	\end{tabular}\\
 	
+	\begin{minipage}[t]{8cm}
+		\subsubsection{Lenzsche Regel}
+			Der induzierte Strom wirkt seiner Ursache entgegen.\\
+			Ursache des induzierten Stromes ist die \"Anderung des Flusses.
+	\end{minipage}
+	\hspace{0.5cm}
+	\begin{minipage}[t]{10cm}	
+		\subsubsection{Induktion bei zeitlich veränderlichem Magnetfeld}
+			\textbf{Maxwell}
+			$\quad\boxed{\oint\vec{E}_i \diff \vec{s}=-\frac{\diff}{\diff t}\int \vec{B}\cdot \diff\vec{A}}\quad$
+			\parbox{3.3cm}{\tiny{$\vec{E}_i$ entgegen $\vec{s}$\\
+			$\diff \vec{A}, \diff \vec{s}$ bilden Rechtschraube!}}\\
+			Jedes zeitlich sich ändernde Magnetfeld ruft ein elektrisches Feld hervor und umgekehrt.
+	\end{minipage}
 
 
 \subsection{Zusammenstellung magnetischer Grössen für spezielle
@@ -252,28 +266,32 @@ $H(r) = \frac{N \cdot I}{l} \qquad l \gg d$
 \end{tabular}\\
 
 \begin{minipage}[t]{8cm}
-	\subsubsection{Lenzsche Regel}
-		Der induzierte Strom wirkt seiner Ursache entgegen.\\
-		Ursache des induzierten Stromes ist die \"Anderung des Flusses.
+	\subsection{Belastete Leiterschleife}
+		\begin{minipage}{4.5cm}
+			\includegraphics[width = 4cm]
+			{./images/induktion-belastete-leiterschleife}
+		\end{minipage}
+		\begin{minipage}{3cm}
+			$i = \frac{\dot{\Phi}}{R_L + R_i}$\\
+			\\
+			$ u = \dot{\Phi} - i \cdot R_i$
+		\end{minipage}
 \end{minipage}
-\hspace{0.5cm}
-\begin{minipage}[t]{10cm}	
-	\subsubsection{Induktion bei zeitlich veränderlichem Magnetfeld}
-		\textbf{Maxwell}
-		$\quad\boxed{\oint\vec{E}_i \diff \vec{s}=-\frac{\diff}{\diff t}\int \vec{B}\cdot \diff\vec{A}}\quad$
-		\parbox{3.3cm}{\tiny{$\vec{E}_i$ entgegen $\vec{s}$\\
-		$\diff \vec{A}, \diff \vec{s}$ bilden Rechtschraube!}}\\
-		Jedes zeitlich sich ändernde Magnetfeld ruft ein elektrisches Feld hervor und umgekehrt.
+\begin{minipage}[t]{10cm}
+	\subsection{Selbstinduktion}
+		\begin{minipage}{4.5cm}
+			\includegraphics[width = 4cm]
+			{./images/induktion-selbstinduktion}
+		\end{minipage}
+		\begin{minipage}{5cm}
+			$ u(t) = R\cdot i+ L \cdot \frac{\diff i}{\diff t}$\\ 
+			\\
+			für $R = 0$ {\small (Leiterwiderstand)}:\\
+			$\boxed{ u(t) = L \frac{\diff i}{\diff t}}$
+		\end{minipage}
 \end{minipage}
 
-%TODO Selbstindukion S. 5-60
-
-%TODO Gleich- und gegensinnige Kopplung S.5-62/63
-
-%TODO Klemmenspannung bei Belastung S.5-59
-
-
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.3}
 \subsection{Gegeninduktion, Transformator}
 \begin{tabular}{ll}
 	\parbox{9.5cm}{
@@ -299,14 +317,20 @@ $H(r) = \frac{N \cdot I}{l} \qquad l \gg d$
 		\fbox{$u_2 = L_2 \dfrac{di_2}{dt}
 		\textcolor{red}{+}\textcolor{green}{-} M_{21} \dfrac{d i_1}{dt} 
 			= -L_2 \dfrac{di_b}{dt} \textcolor{red}{+}\textcolor{green}{-} M_{21}
-			\dfrac{d i_1}{dt}$} 
-		\vspace{.2cm}
-  			
+			\dfrac{d i_1}{dt}$} \\
+		%(VST im Leerlauf: $\frac{1}{"u} = k \sqrt{\frac{L_2}{L_1}}$)
+		\vspace{.1cm}
+  		
 	  		\textbf{Idealer Trafo}\\ 
-	  		\fbox{$"u = \dfrac{u_1}{u_2} = \dfrac{N_1}{N_2} = \sqrt{\dfrac{L_1}{L_2}}$} $\qquad$ (im Leerlauf: $\dfrac{1}{"u} = k \sqrt{\dfrac{L_2}{L_1}}$)
+	  		$ \boxed{n ="u = \frac{u_1}{u_2} = \frac{N_1}{N_2} = \sqrt{\frac{L_1}{L_2}}} = \frac{i_b}{i_1} \qquad 
+	  		R_{ein} = n^2 \cdot R_b$
+	  		
 	  		}
-  		& \parbox{5cm}{
-	  		\includegraphics[width=4cm]{./images/trafo-kopplung.png} \\
+  		& \parbox{8.5cm}{
+	  		\includegraphics[width=4cm]{./images/trafo-kopplung.png}
+	  		\hspace{0.5cm}
+	  		\includegraphics[width=3.5cm] {./images/trafo-kopplung-zwei-spulen}
+	  		
       		\small{\textcolor{red}{Gleichsinnig} / \textcolor{green}{Gegensinnig}}} \\
 	  		
   	\parbox{9.7cm}{
@@ -325,7 +349,18 @@ $H(r) = \frac{N \cdot I}{l} \qquad l \gg d$
             \end{list}
       		}
   		& \parbox{8.8cm}{
-	  		\includegraphics[width=8.8cm]{./images/trafo-verluste.png}}
-   	\end{tabular}
-   	\renewcommand{\arraystretch}{\arraystretchOriginal}
+  			  		\includegraphics[width=8.8cm]{./images/trafo-verluste.png}}
+   	\end{tabular}\\[-0.5cm]
+   	\renewcommand{\arraystretch}{\arraystretchOriginal}	  
+   	
+   	\subsubsection{Kopplungen}
+   	\begin{minipage}[b]{6cm}
+   		\textbf{Festlegen der Punkte:}
+   		\begin{itemize}
+   			\item Wenn beide Ströme bei „ihrem“ Punkt hineinfliessen, haben die Flüsse gleiche Richtung.
+   		\end{itemize}
+		Bezüglich der Spannungen gilt, dass die markierten Wicklungsenden gleiche Polarität haben.
+   	\end{minipage}
+   		\includegraphics[height = 2.5cm]{./images/trafo-kopplungen}
+   		\includegraphics[height = 3cm]{./images/trafo-kopplung-mittelschenkel}
    
