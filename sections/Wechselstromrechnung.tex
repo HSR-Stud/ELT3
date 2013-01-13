@@ -105,7 +105,7 @@
 		
 		\end{tabular}
 	
-	\subsubsection{Parallel \& Reihen-Ersatzschaltung}
+	\subsubsection{Parallel \& Reihen-Ersatzschaltung (mit Vorsicht geniessen)}
 		
 	\begin{centering}
 			
@@ -123,7 +123,7 @@
 			Scheinleitwert & $Y=\sqrt{G^2+B^2}$ & \\
 		\hline
 			Wirkwiderstand & & $R=Z\cos\varphi=\frac{U_W}{I}$\\
-			Wirkleitwert & $G=Y\cos\varphi_Y=\frac{I_W}{U}$&\\
+			Wirkleitwert & $G=Y\cos\varphi_{_Y}=\frac{I_W}{U}$&\\
 		\hline
 			Blindwiderstand & & $X=Z\sin\varphi=\frac{U_b}{I}$\\
 			Blindleitwert & $B = Y\sin\varphi_{_Y} = \frac{I_b}{U}$&\\
@@ -137,13 +137,13 @@
 			Scheinleistung & $S=UI=U\sqrt{I{_W}{^2}+I{_b}{^2}}$ & $S=UI =
 			I\sqrt{U{_W}{^2}+U{_b}{^2}}$\\
 		\hline
-			Wirkfraktor & $\cos\varphi= \frac{G}{Y}$ & $\cos\varphi=\frac{R}{Z}$\\
-			Blindfaktor & $\sin\varphi= \frac{B}{Y}$ & $\sin\varphi=\frac{X}{Z}$\\
+			Wirkfraktor & $\cos\varphi_{_Y}= \frac{G}{Y}$ & $\cos\varphi=\frac{R}{Z}$\\
+			Blindfaktor & $\sin\varphi_{_Y}= \frac{B}{Y}$ & $\sin\varphi=\frac{X}{Z}$\\
 		\hline
-			Wirkstrom & $I_W=I\cos\varphi_Y=GU$ & \\
+			Wirkstrom & $I_W=I\cos\varphi_{_Y}=GU$ & \\
 			Wirkspannung & & $U_W = U\cos\varphi =R \cdot I$ \\
 		\hline
-			Blindstrom & $I_b = -I \sin\varphi_y = BU$ & \\
+			Blindstrom & $I_b = -I \sin\varphi_{_Y} = BU$ & \\
 			Blindspannung & & $U_b=U\sin\varphi=X\cdot I$\\
 		\hline
 	\end{tabular}\\
@@ -170,7 +170,7 @@
 					& $\cos \varphi = \frac{P}{S} = \frac{P}{UI}$ \\
 			\end{tabular}}
    	\end{tabular}
-\subsubsection{Leistungsanpassung}
+\subsubsection{Leistungsanpassung von komplexen Quellen}
 	\begin{equation*}
 		\boxed{\underline{Z}_L = \underline{Z}_i^{\ast}} \qquad \underline{Y}_L = \underline{Y}_i^{\ast} \qquad P_{max} = \frac{U_q^2}{4R_i} = \frac{I_q^2 R_i}{4} 
 	\end{equation*}   	
@@ -280,7 +280,7 @@ $$\textbf{Allgemein: }\left[ \begin{array}{cc}
 	\end{list}
 
  	\textbf{Knotenpotential-Methode:}\\
-	Die Netzwerkgleichungen können nicht ohne weiteres formu- liert werden, da hierzu die Zweigströme als Funktion der der Knotenpotentiale vorliegen sollten. Man kann hierzu die Trafogleichungen entsprechend umformen oder eine Ersatzschaltung mit gesteuerten Quellen einführen.\\ \\
+	Die Netzwerkgleichungen können nicht ohne weiteres formu- liert werden, da hierzu die Zweigströme als Funktion der Knotenpotentiale vorliegen sollten. Man kann hierzu die Trafogleichungen entsprechend umformen oder eine Ersatzschaltung mit gesteuerten Quellen einführen.\\ \\
 	\begin{minipage}{9cm}
 		\textbf{Einfacher Spezialfall:}\\
 			Sind bei einem Übertrager die einen Wicklungsenden miteinander verbunden - oder dürfen sie ohne Beeinflussung der restlichen Schaltung miteinander verbunden werden - so kann die Ersatzschaltung rechts verwendet werden.
@@ -400,8 +400,8 @@ Bei der Umwandlung von \underline{Z} nach \underline{Y} und umgekehrt handelt es
   
   \item Extremalwerte berechnen und als Punkte $P_1, P_2$ darstellen. \\
 	($P_1 = \underline{Z}_0 = \lim\limits_{x \rightarrow 0}\underline{Z}, \quad
-	  P_2 = \underline{Z}_\infty = \lim\limits_{x \rightarrow \infty}\underline{Z} $ mit $x$ als veränderliche Grösse)\\
-	 Für das bestimmen der Winkel kann hier die anderen Ebene zur Hilfe genommen werden. Achtung: $\varphi_{_Z} = -\varphi_{_Y}$
+	  P_2 = \underline{Z}_\infty = \lim\limits_{x \rightarrow \infty}\underline{Z} $ mit $x$ als veränderliche Grösse, z.B $x = \omega, R,L,C$)\\
+	 Für das bestimmen der Winkel kann hier die andere Ebene zur Hilfe genommen werden. Achtung: $\varphi_{_Z} = -\varphi_{_Y}$
 	 
   \item Mittelsenkrechte von $P_1, P_2$ konstruieren, deren Schnittpunkt mit Re- \textbf{oder}
   Im-Achse den Kreismittelpunkt $M$ ergibt. \\
