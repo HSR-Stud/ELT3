@@ -36,10 +36,10 @@
    	   		\multirow{2}{1.5cm}{
    				\includegraphics[width=1.5cm]{./images/zeigerdiag-r.png}}
    				& $u(t) = R \cdot i(t)$ 
-   				& \multirow{2}{1.5cm}{\includegraphics[width=1.5cm]{./images/zeigerdiag-l.png}}
+   				& \multirow{2}{1.5cm}{\includegraphics[width=1.5cm]{./images/zeigerdiag-c.png}}
    				& $u(t) = \frac{1}{C} \int\limits_0^t i(\tau) d\tau + u(0)$
    				& 
-   				\multirow{2}{1.5cm}{\includegraphics[width=1.5cm]{./images/zeigerdiag-c.png}}
+   				\multirow{2}{1.5cm}{\includegraphics[width=1.5cm]{./images/zeigerdiag-l.png}}
    				&$u(t) = L \frac{di(t)}{dt}$\\
    				
    				&$i(t) = \frac{u(t)}{R}$
@@ -87,8 +87,8 @@
 		\begin{tabular}{lllll}
 		Scheinwiderstand & & $Z = \frac{U_{eff}}{I_{eff}} $ & $ =
 		\sqrt{R^2+X^2}$ & Ohm\\ Komplexer Widerstand & Impedanz & $\underline Z = R + jX = Z \cdot e^{j \varphi}$ 
-		& $  = \dfrac{\underline{U}}{\underline{I}} = \dfrac{\underline{U}^2}{\underline{S}^*} = 
-		\dfrac{\underline{S}}{\underline{I}^2}$ & Ohm\\
+		& $  = \dfrac{\underline{U}}{\underline{I}} = \dfrac{\underline{U}\cdot\underline{U}^{\ast}}{\underline{S}^*} =  = \dfrac{U^2}{\underline{S}^*} = 
+		\dfrac{\underline{S}}{I^2}$ & Ohm\\
 		Komplexer Leitwert & Admittanz & $\underline Y = G + jB =
 		\frac{1}{\underline Z} = \frac{1}{Z}e^{-j\varphi}$ & $= \frac{\underline{I}}{\underline{U}}$ &  Siemens\\
 		Wirkwiderstand & Resistanz & $R = \Real(\underline Z) $ & $ = Z
@@ -106,6 +106,8 @@
 		\end{tabular}
 	
 	\subsubsection{Parallel \& Reihen-Ersatzschaltung (mit Vorsicht geniessen)}
+	
+	%TODO Folgende Tabelle entfernen und mit Serie und Parralelschaltung von WS_DST übernehmen
 		
 	\begin{centering}
 			
@@ -157,7 +159,7 @@
 			\begin{tabular}{p{3cm}p{4.5cm}p{5.5cm}}
 	      		\multirow{2}{4cm}{Komplexe Leistung}  &
 	      			$ \underline{S} = P + jQ$  &\\
-	      			& \multicolumn{2}{l}{$ \underline{S} = \underline{U} \cdot \underline{I}^\ast = U\cdot I \cdot e^{j(\varphi_u-\varphi_i)} = \frac{\underline{U}^2}{\underline{Z}^*} = \underline{I}^2 \cdot \underline{Z} = \underline{U}^2\cdot\underline{Y}^*$}\\
+	      			& \multicolumn{2}{l}{$ \underline{S} = \underline{U} \cdot \underline{I}^\ast = U\cdot I \cdot e^{j(\varphi_u-\varphi_i)} = \frac{U^2}{\underline{Z}^*} = I^2 \cdot \underline{Z} = U^2\cdot\underline{Y}^*$}\\
 				Scheinleistung
 					& $ S = | \underline{S} | = U I = \frac{U^2}{Z} = I^2 Z$ 
 					& \\
@@ -176,6 +178,7 @@
 	\end{equation*}   	
 
 \subsubsection{Blindleistungskompensation}
+%TODO Serieschlatung von C hinzufügen. -> Rechnung über Impedanz.
 \begin{tabular}{p{4cm}p{4cm}p{4cm}p{6cm}}
 \begin{minipage}{4cm}
     	\includegraphics[width=3.5cm]{./images/Parallelkompensation.png}
@@ -338,16 +341,16 @@ $$\textbf{Allgemein: }\left[ \begin{array}{cc}
 \begin{tabular}{llllll}
 	\multicolumn{3}{l}{\textit{Art der gegebenen Quellen}} & \multicolumn{3}{l}{\textit{Spezialitäten}}\\
 	& Kreisstrom: & Spannungsquellen
-	& Kreisstrom: & Gegeninduktivitäten \\
+	& & Kreisstrom: & Gegeninduktivitäten \\
 	& Knotenpotential: & Stromquellen 
-	& Knotenpotential: & Gesteuerte Stromquellen \\
+	& & Knotenpotential: & Gesteuerte Stromquellen \\
 	
 	\multicolumn{3}{l}{\textit{Anzahl Gleichungen}}
 	& \multicolumn{3}{l}{\textit{Gesuchte Grössen}}\\ 
 	& Kreisstrom: & $z-k+1-$ Anzahl idealer Stromquellen
-	& Kreisstrom: &(Sehnen-) Ströme\\
+	& & Kreisstrom: &(Sehnen-) Ströme\\
 	& Knotenpotential: &$k-1-$ Anzahl idealer Spannungsquellen
-	& Knotenpotential: &(Knoten-) Spannungen
+	& & Knotenpotential: &(Knoten-) Spannungen
 
 \end{tabular}
 
