@@ -1,0 +1,27 @@
+\begin{circuitikz}[scale = 0.5, european resistors,american inductors]
+	\ctikzset{bipoles/length=1.0cm}
+	\draw[*-] (0,0) -- (1,0);
+	\draw[*-] (0,3) -- (1,3);
+	\draw (1,0) to [L, l =$L_1$] (1,3);
+	\draw[*-] (3,0) -- (2,0);
+	\draw[*-] (3,3) -- (2,3);
+	\draw (2,3) to [L, l =$L_2$] (2,0);
+	\draw[*-*] (0.8,2.1) -- (2.2,2.1);
+	\node at (1.5,3) {M};
+	
+	\draw[-triangle 60] (3,1.5)--(5,1.5);
+	
+	\draw[*-*] (5,0) -- (11,0);
+	\draw[*-] (5,3) -- (6,3);
+	\draw[-*] (10,3) -- (11,3);
+	\draw (6,3) to [L, l =$L_1-M$] (8,3);
+	\draw (8,3) to [L, l =$L_2-M$] (10,3);
+	\draw (8,3) to [L, l =$M$] (8,0);
+	\draw[*-] (3,0) -- (2,0);
+	\draw[*-] (3,3) -- (2,3);
+	\draw (2,3) to [L, l =$L_2$] (2,0);
+	\draw[*-*] (0.8,2.1) -- (2.2,2.1);
+	\node at (1.5,3) {M};
+	\fill (8,0) circle (0.1);
+	\fill (8,3) circle (0.1);
+ \end{circuitikz}

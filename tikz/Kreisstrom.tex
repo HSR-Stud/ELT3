@@ -1,0 +1,31 @@
+\begin{circuitikz}[scale =0.6, european resistors,american inductors, european voltages]
+    \ctikzset{bipoles/length=0.8cm}
+	\draw (0,1) to [sinusoidal voltage source, l^=$\underline{U}_{01}$, v^<= $$] (0,3);
+	\draw (2,0) to [C, l =$C_3$] (2,2);
+	\draw (2,2) to [L, l=$L_2$] (2,4);
+	\draw[] (0,0) -- (0,1);
+	\draw[] (0,3) -- (0,4);
+	\draw[] (0,4) -- (3,4);
+	\draw[] (0,0) -- (8,0);
+	\draw (2,2) to [sinusoidal voltage source, l^=$\underline{U}_{04}$, v^<= $$] (4,2);
+	\draw (4,2) to [R, l =$G_4$] (6,2);
+	\draw (3,4) to [sinusoidal current source, l_=$\underline{I}_{c5}$, i_>= $$] (5,4);
+	\draw[] (5,4) -- (8,4);
+	\draw (6,4) to [R, l =$G_6$] (6,2);
+	\draw (6,2) to [L, l =$L_7$] (6,0);
+	\draw (8,3) to [R, l =$G_8$, i={$\underline{I}_8$}] (8,1);
+	\draw[] (8,4) -- (8,3);
+	\draw[] (8,1) -- (8,0);
+	\draw (4,0)  node[ground] {};
+	
+	\draw[color=red] (3,1) to [sinusoidal current source, l^=$\underline{I}_{CL }$, i_<= $$] (5,1);
+	\draw[red] (6,2) -- (5,1);
+	\draw[red] (2,2) -- (3,1);
+	\draw[red] (2.5,2.5) -- (3.5,1.5);
+	
+	\fill [] (2,4) circle (0.1) node[above] {B};
+	\fill [] (6,4) circle (0.1) node[above] {C};
+	\fill [] (2,2) circle (0.1) node[left] {A};
+	\fill [] (6,2) circle (0.1) node[right] {D};
+	\fill [] (4,0) circle (0.1) node[above] {E};
+ \end{circuitikz}

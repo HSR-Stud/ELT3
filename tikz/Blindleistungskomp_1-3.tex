@@ -1,0 +1,14 @@
+\begin{circuitikz}[scale = 0.65, european resistors,american inductors]
+    \ctikzset{bipoles/length=0.80cm}
+	\draw[o-] (0,0) -- (6,0);
+	\draw[o-triangle 60] (0,2) -- (1,2) node[above] {$\underline{I}_k$};
+	\draw (1,2) -- (6,2);
+	\draw[-triangle 60] (0.1,1.9) -- (0.1,0.1);
+	\draw (2,2) to [R, l =$R$, i>=$\underline{I}_R$] (2,0);
+	\draw (4,2) to [L, l =$L$, i>=$\underline{I}_L$] (4,0);
+	\draw (6,2) to [C, l =$C$, i>=$\underline{I}_C$] (6,0);
+	\fill (2,0) circle (0.05);
+	\fill (4,0) circle (0.05);
+	\fill (2,2) circle (0.05);
+	\fill (4,2) circle (0.05);
+ \end{circuitikz}

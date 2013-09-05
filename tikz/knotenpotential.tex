@@ -1,0 +1,23 @@
+\begin{circuitikz}[european resistors, american inductors,scale =0.7]
+\ctikzset{bipoles/length=1cm}
+\tikzstyle{every node}=[font=\footnotesize]
+	\draw (0,0) to[L, l_=$L_1$] (0,2);
+	\draw (0,2) to[sI, l_=$\underline{I}_{q1}$, i=$$] (0,4);
+ 	\draw [-] (0,4) node [left] {$A$}--(0,6)--(3,6);
+ 	\draw (0,5) to[C, l=$C_3$, i=$\underline{I}_3$] (3,5)--(3,4) node[right, midway]{$B$};
+	\draw (0,4) to[R, l_=$R_2$] (3,4);
+	\draw (3,6) to[R, l_=$R_4$] (6,6)--(7,6)--(7,4);
+	\draw (3,4) to[R, l^=$R_5$] (6,4) node[above]{$C$}--(7,4);
+	\draw (3,6) to[R, l_=$R_4$] (6,6);
+	\draw (3,2) to[sV, l^=$\underline{U}_{q6}$, v_<=$$] (3,4);
+	\draw (3,0) to[C, l^=$C_6$, i<=$\underline{I}_6$] (3,2);
+	\draw (6,0)--(6,1) to[L, l_=$L_7$] (6,3)--(6,4);
+	\draw (0,0)--(7,0) -- (7,2) to[sI, i_=${\underline{I}_{q7}}$] (7,4);
+	\draw [fill] (3,0) circle (0.05) node[below]{$E = Bezugspunkt$};
+	\draw [red] (3,0)--(4,1) to[sI, i_=$\underline{I}_{q6}$, color=red] (4,3)--(3,4);
+	\draw [red, *-*] (3,4)--(3,2);
+	\draw [fill] (0,4) circle (0.05);
+	\draw [fill] (3,4) circle (0.05);
+	\draw [fill] (6,4) circle (0.05);
+	\draw [fill] (7,4) circle (0.05);
+\end{circuitikz}

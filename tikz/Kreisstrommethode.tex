@@ -1,0 +1,47 @@
+\begin{circuitikz}[scale=.7, european resistors,american inductors, european voltages]
+	\ctikzset {bipoles/length=.8 cm};
+	\draw (0,0) to [sinusoidal current source, l^=$\underline{U}$, v^<= $$] (0,2);
+	\draw (0,2) to [R, l =$R_1$] (2,2);
+	\draw (2,2) to [L, l =$L_1$] (4,2);
+	\draw (4,2) to [R, l =$R_2$] (6,2);
+	\draw[line width= 1pt, red] (4,0) to [C, l =\textcolor{black}{$C_1$}] (4,2);
+	\draw (6,2) to [L, l=$L_2$] (6,0);
+	\draw[] (0,0) -- (6,0);
+
+	\draw[*-*] (6,1.5) --  (8,1.5) node[midway, above] {$M$};
+	\draw (8,2) to [R, l =$R_3$] (10,2);
+	\draw (10,2) to [L, l =$L_4$] (12,2);
+	\draw (12,0) to [R, l_=$R_4$] (12,2);
+	\draw[line width= 1pt, red] (10,0) to [C, l_=\textcolor{black}{$C_4$}] (10,2);
+	\draw (8,0) to [L, l=$L_3$] (8,2);
+	\draw[-o] (8,0) -- (13,0);
+	\draw[-o] (12,2) -- (13,2);
+	\draw[-] (4,2) -- (4,3);
+	\draw[-] (4,3) -- (6,3);
+	\draw[-] (10,2) -- (10,3);
+	\draw[-] (8,3) -- (10,3);
+	\draw (6,3) to [C, l =$C_2$] (8,3);
+	\draw[line width= 1pt, red] (6,-1) to [C, l =\textcolor{black}{$C_3$}] (8,-1);
+	\draw[line width= 1pt, red, -] (4,0) -- (4,-1);
+	\draw[line width= 1pt, red, -] (4,-1) -- (6,-1);
+	\draw[line width= 1pt, red, -] (10,0) -- (10,-1);
+	\draw[line width= 1pt, red, -] (8,-1) -- (10,-1);
+
+	\draw[-open triangle 60] (5.8,1.9) -- (5.8,0.1)node[left,midway]{$\underline{U}_2$};
+	\draw[-open triangle 60] (8.2,1.9) -- (8.2,0.1)node[right,midway]{$\underline{U}_3$};
+	\draw[-open triangle 60] (13.1,1.8) -- (13.1,0.2)node[right,midway]{$\underline{U}_4$};
+
+	\fill [red] (4,0) circle (0.1);
+	\fill [red] (4,2) circle (0.1);
+	\fill [red] (10,0) circle (0.1);
+	\fill [red] (10,2) circle (0.1);
+	\fill [] (12,0) circle (0.1);
+	\fill [] (12,2) circle (0.1);
+
+	\draw[line width= 1pt, green] (0.3,0.1) rectangle (3.9,1.8);
+	\draw[line width= 1pt, green] (4.4,0.1) rectangle (5.7,1.8);
+	\draw[line width= 1pt, green] (8.3,0.1) rectangle (9.6,1.8);
+	\draw[line width= 1pt, green] (10.3,0.1) rectangle (11.9,1.8);
+	\draw[line width= 1pt, green] (4.2,-0.8) rectangle (9.8,2.8);
+
+ \end{circuitikz}

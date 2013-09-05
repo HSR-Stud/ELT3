@@ -1,0 +1,10 @@
+\begin{circuitikz}[scale =0.5, european resistors,american inductors]
+    \ctikzset{bipoles/length=1.0cm}
+	\draw[-triangle 60] (0,0) -- (4.2,0)node[midway,above]{$\underline{I}_R$};
+	\draw[-triangle 60] (4,0) -- (6,0) node[midway,above]{$\underline{U}$};
+	\draw[-triangle 60] (0,0) -- (4,-4)node[midway,above]{$\underline{I}$};
+	\draw[-triangle 60] (0,0) -- (4,-2)node[above]{$\underline{I}_K$};
+	\draw[-triangle 60] (4.2,0) -- (4.2,-4)node[right]{$\underline{I}_L$};
+	\draw[triangle 60-] (4,-2) -- (4,-4)node[midway,left]{$\underline{I}_C$};
+	\draw [>= triangle 60,<-] (1.5,0) arc (0:-30:1.2cm) node [right] {$\varphi_k $};
+ \end{circuitikz}
